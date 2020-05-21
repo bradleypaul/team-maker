@@ -1,0 +1,22 @@
+{
+  "name": "team-maker",
+  "version": "1.0.0",
+  "description": "Project for creating development team overviews",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradleypaul/team-maker.git"
+  },
+  "author": "Paul Bradley",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bradleypaul/team-maker/issues"
+  },
+  "homepage": "https://github.com/bradleypaul/team-maker#readme"
+}
