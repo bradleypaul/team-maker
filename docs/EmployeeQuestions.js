@@ -23,11 +23,11 @@ class EmployeeQuestions {
 				type: "input",
 				name: "id",
 				// use inquirer's message property as a function to inject 
-				// the employee's namee into the rest of the questions
+				// the employee's name into the rest of the questions
 				message: (ans) => `What is ${ans.name}'s id?`,
 				validate: validateNumber
 			},{
-				type: "email",
+				type: "input",
 				name: "email",
 				message: (ans) => `What is ${ans.name}'s email?`,
 				validate: validateEmail
