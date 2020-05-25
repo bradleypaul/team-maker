@@ -4,9 +4,10 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const EmployeeQuestions = require('./EmployeeQuestions');
-const Manager = require('./Manager');
-const Engineer = require('./Engineer');
-const Intern = require('./Intern');
+const Manager = require('./employees/Manager');
+const Engineer = require('./employees/Engineer');
+const Intern = require('./employees/Intern');
+const generate = require('./generateHtml');
 
 const chooser = [
     {
@@ -33,7 +34,6 @@ const _continue = [
 async function writeToFile(fileName, data) {
     await fs.promises.writeFile(fileName, data, "utf-8");
 }
-
 
 function createEmployee(role, emp) {
     // could just return emp.role = role :?
@@ -69,7 +69,8 @@ async function start() {
     }
     
     //generate html for all the employees
-
+    const html = generate(employees);
+    await writeToFile('team.html', html);
 }
 
 start();
