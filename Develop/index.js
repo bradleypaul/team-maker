@@ -4,10 +4,10 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const EmployeeQuestions = require('./EmployeeQuestions');
-const Manager = require('./employees/Manager');
-const Engineer = require('./employees/Engineer');
-const Intern = require('./employees/Intern');
-const generate = require('./generateHtml');
+const Manager = require('./lib/Manager');
+const Engineer = require('./lib/Engineer');
+const Intern = require('./lib/Intern');
+const generate = require('./src/generateHtml');
 
 const chooser = [
     {
@@ -70,7 +70,7 @@ async function start() {
     
     //generate html for all the employees
     const html = generate(employees);
-    await writeToFile('team.html', html);
+    await writeToFile('dist/team.html', html);
 }
 
 start();
