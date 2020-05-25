@@ -2,6 +2,15 @@
     <html>
     
     <head>
+    <script>
+    function clickHandler(e) {
+        window.open('https://www.github.com/' + e.target.innerText, '_blank');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".github").forEach(element => element.addEventListener('click', clickHandler));
+    });
+    </script>
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -18,7 +27,9 @@
             body {
                 margin: 0;
             }
-    
+            .container {
+                flex-wrap: wrap;
+            }
             h1 {
                 text-align: center;
                 background-color: #eb4554;
@@ -36,9 +47,9 @@
             }
     
             .card {
-                padding: 5px;
-                font-size: .95rem;
                 padding: 0;
+                margin: 20px;
+                font-size: .95rem;
             }
     
             .header {
@@ -77,6 +88,13 @@
                 border-bottom: 1px solid;
                 border-color: rgb(182, 182, 182);
             }
+    
+            .container {
+                flex-wrap: wrap;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
         </style>
     </head>
     
@@ -87,32 +105,77 @@
     
         <!--cards-->
         <main class="container">
-            <div class="row">
-                <div class="col-xs-4">
                     
     <div class="card">
         <div class="header">
             <h2>
-                Umberto
+                lkdsafjk
             </h2>
             <h3>
-                Manager
+                <i class="fas fa-coffee"></i> Manager
             </h3>
         </div>
         <div class="data">
             <ul>
                 <li>
-                    ID: KSDfjl
+                    ID: ldskfj
                 </li>
                 <li>
-                    Email: ladskfjlkds@dklfj
+                    Email: <a href="mailto:sldkfj@Lkjdlk">sldkfj@Lkjdlk</a>
                 </li>
                 <li class="last">
-                    Office Number: lskdfj
+                    Office Number: dlkfj
                 </li>
             </ul>
         </div>
     </div>
+
+    <div class="card">
+        <div class="header">
+            <h2>
+                lksjdf
+            </h2>
+            <h3>
+                <i class="fas fa-glasses"></i> Engineer
+            </h3>
+        </div>
+        <div class="data">
+            <ul>
+                <li>
+                    ID: slfkj
+                </li>
+                <li>
+                    Email: <a href="mailto:ldfskj@Lkj">ldfskj@Lkj</a>
+                </li>
+                <li class="last">
+                    GitHub: <a href="" class="github">df</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="header">
+            <h2>
+                kildjf
+            </h2>
+            <h3>
+                <i class="fas fa-graduation-cap"></i> Intern
+            </h3>
+        </div>
+        <div class="data">
+            <ul>
+                <li>
+                    ID: dlkfj
+                </li>
+                <li>
+                    Email: <a href="mailto:s@lkdj">s@lkdj</a>
+                </li>
+                <li class="last">
+                    School: ldskjf
+                </li>
+            </ul>
+  
                 </div>
             </div>
         </main>

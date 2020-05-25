@@ -3,6 +3,15 @@ function generateHtml(employees) {
     <html>
     
     <head>
+    <script>
+    function clickHandler(e) {
+        window.open('https://www.github.com/' + e.target.innerText, '_blank');
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll(".github").forEach(element => element.addEventListener('click', clickHandler));
+    });
+    </script>
         <!-- CSS only -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
             integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -19,7 +28,9 @@ function generateHtml(employees) {
             body {
                 margin: 0;
             }
-    
+            .container {
+                flex-wrap: wrap;
+            }
             h1 {
                 text-align: center;
                 background-color: #eb4554;
@@ -37,9 +48,9 @@ function generateHtml(employees) {
             }
     
             .card {
-                padding: 5px;
-                font-size: .95rem;
                 padding: 0;
+                margin: 20px;
+                font-size: .95rem;
             }
     
             .header {
@@ -78,6 +89,13 @@ function generateHtml(employees) {
                 border-bottom: 1px solid;
                 border-color: rgb(182, 182, 182);
             }
+    
+            .container {
+                flex-wrap: wrap;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
         </style>
     </head>
     
@@ -88,11 +106,7 @@ function generateHtml(employees) {
     
         <!--cards-->
         <main class="container">
-            <div class="row">
-                <div class="col-xs-4">
-                    ${employees.map(makeCard).join('\n')}
-                </div>
-            </div>
+            ${employees.map(makeCard).join('\n')}
         </main>
     </body>
     
@@ -100,6 +114,7 @@ function generateHtml(employees) {
 }
 
 function makeCard(emp) {
+    const email = emp.getEmail();
     return `
     <div class="card">
         <div class="header">
@@ -107,7 +122,7 @@ function makeCard(emp) {
                 ${emp.getName()}
             </h2>
             <h3>
-                ${emp.getRole()}
+                ${getSymbol(emp)} ${emp.getRole()}
             </h3>
         </div>
         <div class="data">
@@ -116,7 +131,7 @@ function makeCard(emp) {
                     ID: ${emp.getId()}
                 </li>
                 <li>
-                    Email: ${emp.getEmail()}
+                    Email: <a href="mailto:${email}">${email}</a>
                 </li>
                 <li class="last">
                     ${getSpecialProperty(emp)}
@@ -131,9 +146,20 @@ function getSpecialProperty(emp) {
     if (role === "Manager") {
         return `Office Number: ${emp.getOfficeNumber()}`;
     } else if (role == "Engineer") {
-        return `GitHub: ${emp.getGithub()}`;
+        return `GitHub: <a href="" class="github">${emp.getGithub()}</a>`;
     } else if (role == "Intern") {
         return `School: ${emp.getSchool()}`;
+    }
+}
+
+function getSymbol(emp) {
+    const role = emp.getRole();
+    if (role === "Manager") {
+        return `<i class="fas fa-coffee"></i>`;
+    } else if (role == "Engineer") {
+        return `<i class="fas fa-glasses"></i>`;
+    } else if (role == "Intern") {
+        return `<i class="fas fa-graduation-cap"></i>`;
     }
 }
 
