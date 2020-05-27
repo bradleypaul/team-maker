@@ -147,9 +147,9 @@ function getSpecialProperty(emp) {
     const role = emp.getRole();
     if (role === "Manager") {
         return `Office Number: ${emp.getOfficeNumber()}`;
-    } else if (role == "Engineer") {
+    } else if (role === "Engineer") {
         return `GitHub: <a href="" class="github">${emp.getGithub()}</a>`;
-    } else if (role == "Intern") {
+    } else if (role === "Intern") {
         return `School: ${emp.getSchool()}`;
     }
 }
@@ -158,9 +158,9 @@ function getSymbol(emp) {
     const role = emp.getRole();
     if (role === "Manager") {
         return `<i class="fas fa-coffee"></i>`;
-    } else if (role == "Engineer") {
+    } else if (role === "Engineer") {
         return `<i class="fas fa-glasses"></i>`;
-    } else if (role == "Intern") {
+    } else if (role === "Intern") {
         return `<i class="fas fa-graduation-cap"></i>`;
     }
 }
