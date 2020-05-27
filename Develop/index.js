@@ -58,5 +58,3 @@ async function query(role, employees) {
     const html = generate(employees);
     await writeToFile('dist/team.html', html);
 })();
-
-start();
