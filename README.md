@@ -27,6 +27,7 @@ node index.js
 ## Usage
 
 To give middle management or outside parties quick cheatsheets for contacting team members.
+[Video Walkthrough](https://drive.google.com/file/d/1hqXm_H81t4eUwkGXKQJofK7_I2D5RgR9/view)
 
 ## License
 
