@@ -4,11 +4,8 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const EmployeeQuestions = require('./EmployeeQuestions');
-const Manager = require('./lib/Manager');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
 const generate = require('./src/generateHtml');
-
+const {createEmployee} = require('./src/util');
 const chooser = [
     {
         type: "list",
@@ -35,17 +32,6 @@ async function writeToFile(fileName, data) {
     await fs.promises.writeFile(fileName, data, "utf-8");
 }
 
-function createEmployee(role, emp) {
-    // could just return emp.role = role :?
-    // because all the props are already setup but eh
-    if(role === "manager") {
-        return new Manager(emp);
-    } else if (role === "engineer") {
-        return new Engineer(emp);
-    } else if (role === "intern") {
-        return new Intern(emp);
-    }
-}
 
 async function query(role, employees) {
     const questions = (new EmployeeQuestions(role)).getQuestions();
@@ -55,7 +41,7 @@ async function query(role, employees) {
     return (await inquirer.prompt(_continue)).continue === "yes";
 }
 
-async function start() {
+(async function () {
     const employees = [];
     console.log("Hello, and thank you for using my team building app.\n");
     
@@ -71,6 +57,6 @@ async function start() {
     //generate html for all the employees
     const html = generate(employees);
     await writeToFile('dist/team.html', html);
-}
+})();
 
 start();
