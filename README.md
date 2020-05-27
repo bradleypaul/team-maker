@@ -4,7 +4,7 @@
 
 ## Description
 
-A project to make a webpage that displays information about a software team, with different roles for managers, engineers, and interns. 
+A project to make a webpage that displays information about a software team, with different roles for managers, engineers, and interns.
 
 ## Table of Contents
 
