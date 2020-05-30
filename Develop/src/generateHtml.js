@@ -116,21 +116,21 @@ function generateHtml(employees) {
 }
 
 function makeCard(emp) {
-    const email = emp.getEmail();
+    const email = emp.email;
     return `
     <div class="card">
         <div class="header">
             <h2>
-                ${emp.getName()}
+                ${emp.name}
             </h2>
             <h3>
-                ${getSymbol(emp)} ${emp.getRole()}
+                ${getSymbol(emp)} ${emp.role}
             </h3>
         </div>
         <div class="data">
             <ul>
                 <li>
-                    ID: ${emp.getId()}
+                    ID: ${emp.id}
                 </li>
                 <li>
                     Email: <a href="mailto:${email}">${email}</a>
@@ -144,23 +144,21 @@ function makeCard(emp) {
 }
 
 function getSpecialProperty(emp) {
-    const role = emp.getRole();
-    if (role === "Manager") {
-        return `Office Number: ${emp.getOfficeNumber()}`;
-    } else if (role === "Engineer") {
-        return `GitHub: <a href="" class="github">${emp.getGithub()}</a>`;
-    } else if (role === "Intern") {
-        return `School: ${emp.getSchool()}`;
+    if (emp.role === "Manager") {
+        return `Office Number: ${emp.officeNumber}`;
+    } else if (emp.role === "Engineer") {
+        return `GitHub: <a href="" class="github">${emp.github}</a>`;
+    } else if (emp.role === "Intern") {
+        return `School: ${emp.school}`;
     }
 }
 
 function getSymbol(emp) {
-    const role = emp.getRole();
-    if (role === "Manager") {
+    if (emp.role === "Manager") {
         return `<i class="fas fa-coffee"></i>`;
-    } else if (role === "Engineer") {
+    } else if (emp.role === "Engineer") {
         return `<i class="fas fa-glasses"></i>`;
-    } else if (role === "Intern") {
+    } else if (emp.role === "Intern") {
         return `<i class="fas fa-graduation-cap"></i>`;
     }
 }
