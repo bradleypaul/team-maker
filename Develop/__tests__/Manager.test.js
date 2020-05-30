@@ -13,9 +13,6 @@ test("Creates a manager correctly", () => {
     expect(emp.id).toBe(1);
     expect(emp.email).toBe("paul@office.com");
     expect(emp.officeNumber).toBe(7);
-    expect(emp.getName()).toBe("Paul");
-    expect(emp.getId()).toBe(1);
-    expect(emp.getEmail()).toBe("paul@office.com");
-    expect(emp.getRole()).toBe("Manager");
-    expect(emp.getOfficeNumber()).toBe(7);
+    expect(emp.role).toBe("Manager");
+    expect(Object.isFrozen(emp)).toBeTruthy();
 });

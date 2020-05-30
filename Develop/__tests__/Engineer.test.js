@@ -13,9 +13,6 @@ test("Creates an Engineer correctly", () => {
     expect(emp.id).toBe(1);
     expect(emp.email).toBe("paul@office.com");
     expect(emp.github).toBe("bradleypaul");
-    expect(emp.getName()).toBe("Paul");
-    expect(emp.getId()).toBe(1);
-    expect(emp.getEmail()).toBe("paul@office.com");
-    expect(emp.getRole()).toBe("Engineer");
-    expect(emp.getGithub()).toBe("bradleypaul");
+    expect(emp.role).toBe("Engineer");
+    expect(Object.isFrozen(emp)).toBeTruthy();
 });

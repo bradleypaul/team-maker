@@ -13,9 +13,6 @@ test("Creates an intern correctly", () => {
     expect(emp.id).toBe(1);
     expect(emp.email).toBe("creed@www.creedthoughts.gov.www");
     expect(emp.school).toBe("Scranton U");
-    expect(emp.getName()).toBe("Creed Bratton");
-    expect(emp.getId()).toBe(1);
-    expect(emp.getEmail()).toBe("creed@www.creedthoughts.gov.www");
-    expect(emp.getRole()).toBe("Intern");
-    expect(emp.getSchool()).toBe("Scranton U");
+    expect(emp.role).toBe("Intern");
+    expect(Object.isFrozen(emp)).toBeTruthy();
 });

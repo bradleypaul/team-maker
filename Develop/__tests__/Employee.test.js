@@ -11,8 +11,5 @@ test("Creates an employee correctly", () => {
     expect(emp.name).toBe("Jim");
     expect(emp.id).toBe(1);
     expect(emp.email).toBe("jim@office.com");
-    expect(emp.getName()).toBe("Jim");
-    expect(emp.getId()).toBe(1);
-    expect(emp.getEmail()).toBe("jim@office.com");
-    expect(emp.getRole()).toBe("Employee");
+    expect(emp.role).toBe("Employee");
 });
