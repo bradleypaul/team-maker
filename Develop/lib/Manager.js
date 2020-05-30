@@ -4,6 +4,9 @@ class Manager extends Employee {
     constructor(emp) {
         super(emp);
         this.officeNumber = emp.officeNumber;
+
+        //freeze object so it's immutable after constructor finishes
+        Object.freeze(this);
     }
 
     getOfficeNumber() {

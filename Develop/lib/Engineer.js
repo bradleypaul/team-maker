@@ -4,6 +4,9 @@ class Engineer extends Employee {
     constructor(emp) {
         super(emp);
         this.github = emp.github;
+
+        //freeze object so it's immutable after constructor finishes
+        Object.freeze(this);
     }
 
     getGithub() {
