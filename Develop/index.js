@@ -4,7 +4,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const EmployeeQuestions = require('./EmployeeQuestions');
-const generate = require('./src/generateHtml');
+const {generateHtml} = require('./src/generateHtml');
 const {createEmployee} = require('./src/util');
 const chooser = [
     {
@@ -32,7 +32,6 @@ async function writeToFile(fileName, data) {
     await fs.promises.writeFile(fileName, data, "utf-8");
 }
 
-
 async function query(role, employees) {
     const questions = (new EmployeeQuestions(role)).getQuestions();
     const emp = await inquirer.prompt(questions);
@@ -55,6 +54,6 @@ async function query(role, employees) {
     }
     
     //generate html for all the employees
-    const html = generate(employees);
+    const html = generateHtml(employees);
     await writeToFile('dist/team.html', html);
 })();
