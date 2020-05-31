@@ -23,6 +23,7 @@
   "homepage": "https://github.com/bradleypaul/team-maker#readme",
   "dependencies": {
     "inquirer": "^7.1.0",
+    "jasmine": "^3.5.0",
     "jest": "^26.0.1"
   }
 }
