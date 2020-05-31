@@ -2,12 +2,14 @@
   "name": "team-maker",
   "version": "1.0.0",
   "description": "Project for creating development team overviews",
-  "main": "index.js",
+  "main": "Develop/index.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coverage": "npx jest --coverage",
+    "start": "node Develop/index.js"
   },
   "repository": {
     "type": "git",
