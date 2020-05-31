@@ -14,7 +14,7 @@ class EmployeeQuestions {
 	getQuestions() {
 		// take the default array and spread it into another array with the last
 		// question added.
-		return [...[
+		return [
 			{
 				type: "input",
 				name: "name",
@@ -31,8 +31,9 @@ class EmployeeQuestions {
 				name: "email",
 				message: (ans) => `What is ${ans.name}'s email?`,
 				validate: validateEmail
-			}
-		], this.getLastQuestion()];
+			},
+			this.getLastQuestion()
+		];
 	}
 
 	//return role specific questions based on the role property
