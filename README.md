@@ -11,6 +11,7 @@ A project to make a webpage that displays information about a software team, wit
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Demo](#demo)
 * [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
@@ -28,6 +29,10 @@ node index.js
 
 To give middle management or outside parties quick cheatsheets for contacting team members.
 [Video Walkthrough](https://drive.google.com/file/d/1hqXm_H81t4eUwkGXKQJofK7_I2D5RgR9/view)
+
+## Demo
+
+https://drive.google.com/file/d/1hqXm_H81t4eUwkGXKQJofK7_I2D5RgR9/view
 
 ## License
 
@@ -48,4 +53,3 @@ npm test
 GitHub profile: [bradleypaul](https://github.com/bradleypaul)
 My email is: [bradleypauld@gmail.com](mailto:bradleypauld@gmail.com)
 If you are interested in my work, and would like to contact me about job opportunities, please feel free to email me at any time.
-  

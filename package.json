@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/bradleypaul/team-maker#readme",
   "dependencies": {
-    "inquirer": "^7.1.0",
-    "jasmine": "^3.5.0",
-    "jest": "^26.0.1"
+    "inquirer": "^7.3.3",
+    "jasmine": "^3.6.1",
+    "jest": "^26.2.2",
+    "koa": "^2.13.0"
   }
 }
